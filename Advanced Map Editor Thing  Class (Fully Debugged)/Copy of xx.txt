@@ -1,0 +1,27 @@
+Dim MyUnit() as UnitB
+Global Num,Rem as Integer
+
+Public Sub Form1_load()
+Num=1
+set MyUnit(1)= New UnitB
+End Sub
+
+Public Sub Command1_click() 'add
+Num=Num+1
+Redim Preserve MyUnit(Num) as UnitB
+set MyUnit(Num)=New UnitB
+End Sub
+
+
+Public Sub Command2_click() 'remove
+Rem=inputbox("Removing a Unit from collection","Remove")
+
+if rem>0 then
+ if rem<>num then
+  MyUnit(rem)=MyUnit(Num)
+endif
+Num=Num-1
+Redim Preserve MyUnit(Num) as UnitB
+endif
+
+End Sub
